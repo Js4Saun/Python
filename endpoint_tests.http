@@ -1,0 +1,138 @@
+curl --request GET http://127.0.0.1:5000/
+
+curl --request POST http://127.0.0.1:5000/weather/add-weather \
+--header "Content-Type: application/json" \
+--data
+'{
+        "weather_id" : "1",
+        "weather_humidity": "80.0",
+        "weather_region": "Bolton",
+        "weather_wind_speed": "11",
+        "weather_wind_direction": "56",
+        "weather_temp": "4",
+        "weather_rain": "12",
+        "weather_coords": "Latitude: 53.144500 / N 53° 8 40.2 Longitude: -2.797200 / W 2° 47 49.92"        
+}'
+
+curl --request GET http://127.0.0.1:5000/weathers/
+
+curl --request GET http://127.0.0.1:5000/users/
+
+curl --request GET http://127.0.0.1:5000/weathers/get-one-weather/3
+
+curl --request GET http://127.0.0.1:5000/weathers/get-all-weather-region/UK
+
+curl --request DELETE http://127.0.0.1:5000/weathers/delete-one-weather/1
+
+curl --request DELETE http://127.0.0.1:5000/users/delete-one-user/1
+
+curl --request POST http://127.0.0.1:5000/users/add-users \
+--header "Content-Type: application/json" \
+--data
+'{
+        "user_id" : "2",
+        "user_name" : "Lord Joe",
+        "user_password" : "god",
+        "user_email" : "rukcrt@bolton.ac.uk"
+        
+}'
+
+curl --request GET http://127.0.0.1:5000/users/get-one-users/1
+
+curl --request GET http://127.0.0.1:5000/users/get-one-users-email/js4crt@bolton.ac.uk
+
+curl --request PUT http://127.0.0.1:5000/weathers/update-weathers
+--header "Content-Type: application/json" \
+--data
+'{
+        "weather_id": "2",
+        "weather_humidity": "86",
+        "weather_region": "Bury",
+        "weather_wind_speed": "15",
+        "weather_wind_direction": "56.9",
+        "weather_temp": "6",
+        "weather_rain": "30",
+        "weather_coords": "556564" 
+}'
+
+curl --request PUT http://127.0.0.1:5000/users/update-users
+--header "Content-Type: application/json" \
+--data
+'{
+        "user_id" : "1",
+        "user_name" : "Joseph",
+        "user_password" : "goku",
+        "user_email" : "yamijosef@hotmail.co.uk"
+}'
+
+curl --request PATCH http://127.0.0.1:5000/users/update-users-username
+--header "Content-Type: application/json" \
+--data
+'{
+        "user_id" : "1",
+        "user_name" : "Dante"
+}'
+
+curl --request PATCH http://127.0.0.1:5000/users/update-users-password
+--header "Content-Type: application/json" \
+--data
+'{
+        "user_id" : "1",
+        "user_password" : "1234"
+}'
+
+curl --request PATCH http://127.0.0.1:5000/weathers/update-weather-humidity
+--header "Content-Type: application/json" \
+--data
+'{
+        "weather_id" : "1",
+        "weather_humidity" : "90.0"
+}'
+
+curl --request PATCH http://127.0.0.1:5000/weathers/update-weather-windspeed
+--header "Content-Type: application/json" \
+--data
+'{
+        "weather_id" : "1",
+        "weather_wind_speed" : "23"
+}'
+
+curl --request PATCH http://127.0.0.1:5000/weathers/update-weather-wind-direction
+--header "Content-Type: application/json" \
+--data
+'{
+        "weather_id" : "1",
+        "weather_wind_direction" : "360"
+}'
+
+curl --request PATCH http://127.0.0.1:5000/weathers/update-weather-temp
+--header "Content-Type: application/json" \
+--data
+'{
+        "weather_id" : "1",
+        "weather_temp" : "3"
+}'
+
+curl --request PATCH http://127.0.0.1:5000/weathers/update-weather-percipitation
+--header "Content-Type: application/json" \
+--data
+'{
+        "weather_id" : "1",
+        "weather_rain" : "14"
+}'
+
+curl --request PATCH http://127.0.0.1:5000/weathers/update-weather-patch
+--header "Content-Type: application/json" \
+--data
+'{
+        "weather_id" : "1",
+        "weather_rain" : "14"
+}'
+
+curl --request PATCH http://127.0.0.1:5000/users/update-user-patch
+--header "Content-Type: application/json" \
+--data
+'{
+        "user_id" : "1",
+        "user_password" : "joemama"
+}'
